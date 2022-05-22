@@ -1,0 +1,110 @@
+/* Calendar Styles */
+.calendar-month {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    list-style-type: none;
+  }
+  .calendar-month .week {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .calendar-month .week__header {
+    order: 1;
+    background: #fff;
+    border-right: 1px solid #e8e8e8;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 2px;
+    width: 14.2857%;
+    box-sizing: border-box;
+  }
+  .calendar-month .week__header:nth-child(7) {
+    border-right: 0;
+  }
+  /* .calendar-month .week__header:first-letter {
+    font-size: 12px;
+  } */
+  @media (max-width: 767px) {
+    .calendar-month .week__header {
+      padding: 10px 0;
+      /* font-size: 0; */
+    }
+    .calendar-month .week__header__hide {
+      font-size: 0;
+    }
+  }
+  .calendar-month .days {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+  }
+  .calendar-month .day {
+    position: relative;
+    order: 1;
+    width: 14.2857%;
+    background: #fff;
+    border-right: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+    transition: 0.5s;
+    box-sizing: border-box;
+  }
+  .calendar-month .day:nth-child(7n+7) {
+    border-left: none;
+  }
+  .calendar-month .day:nth-child(7n+7) {
+    border-right: none;
+  }
+  .calendar-month .day:after {
+    /* Create responsive square div */
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  .calendar-month .day:hover {
+    background: #eee;
+  }
+  .calendar-month .day__number {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    margin: 0;
+  }
+  @media (max-width: 767px) {
+    .calendar-month .day__number {
+      right: 5px;
+      top: 5px;
+    }
+  }
+  .calendar-month .day--empty {
+    background: #f8f8f8;
+  }
+  .calendar-month .day--empty:hover {
+    cursor: default;
+    background: #f8f8f8;
+  }
+  .calendar-month a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Other Styles - not required */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    padding: 50px 0;
+    margin: 0;
+    background: #eee;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+  }

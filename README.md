@@ -1,2 +1,1 @@
-# test
-[測試網站](https://easyliugit.github.io/test/)
+# [測試網站](https://easyliugit.github.io/test/)

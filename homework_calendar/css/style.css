@@ -2,17 +2,23 @@
 			margin: 0;
 			box-sizing: border-box;
 		}
-		.calendar_body
-		,.header
+		.header
 		,.calendar_month
 		,.calendar_day_th
 		,.calendar_week{
-			border: 1px solid lightgray;
+			/* border: 1px solid lightgray; */
 		}
+        span{
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", sans-serif;
+        }
+
 		.calendar_body{
 			width: 1020px;
 			margin: 10px auto;
-			height: 630px;
+			/* height: 630px; */
+            box-shadow: 5px 5px 72px rgb(30 46 50 / 50%);
+            overflow: hidden;
+            padding: 6px 6px 10px 10px;
 		}
 		.header{
 			text-align: center;
@@ -21,9 +27,13 @@
 			display: flex;
 			text-align: center;
 			justify-content:space-around;
+            padding: 6px 0;
 		}		
-		.calendar_month > div{
-			/* flex-basis: calc(100% / 12); */
+		.calendar_month > a{
+            text-decoration: none;
+            font-size: larger;
+            color: #000;
+            font-weight: 600;
 		}
 		.calendar_day_th{
 			display: flex;
@@ -42,4 +52,16 @@
 		.calendar_day{
 			display: flex;
 			flex-flow: column wrap;
+            justify-content: space-between;
+            padding: 18px 12px 12px;
 		}
+        .calendar_date{
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 0.7;
+        }
+        .calendar_task{
+            font-size: 18px;
+            font-weight: 100;
+            padding-top: 6px;
+        }

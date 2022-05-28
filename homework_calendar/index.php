@@ -38,6 +38,7 @@ $lastDay = $year . "-" . $month . "-" . $monthDays; // 當月最後一天日期"
 $lastWeekday = date("w", strtotime($lastDay)); // 當月最後一天在星期幾
 $today = date("Y-m-d");
 $dateHouse = [];
+$months = array("一月"=>"1", "二月"=>"2", "三月"=>"3", "四月"=>"4", "五月"=>"5", "六月"=>"6", "七月"=>"7", "八月"=>"8", "九月"=>"9", "十月"=>"10", "十一月"=>"11", "十二月"=>"12");
 
 // 開始組合月曆存入陣列
 // 當月一號以前註記空白
@@ -70,8 +71,8 @@ for ($i = 0; $i < (6 - $lastWeekday); $i++) {
 <body>
 	<div class="calendar_body">
 		<header class="header">
-			<h1>使用陣列來做月曆</h1>
-			<p><?php echo "要顯示的月份為" . $year . '年' . $month . '月'; ?></p>
+			<h1><?php echo $year;?>年</h1>
+			<!-- <p><?php echo "要顯示的月份為" . $year . '年' . $month . '月'; ?></p> -->
 	
 			<div class='nav'>
 				<span>
@@ -84,18 +85,16 @@ for ($i = 0; $i < (6 - $lastWeekday); $i++) {
 			</div>
 		</header>
 		<section class="calendar_month">
-			<div>一月</div>
-			<div>二月</div>
-			<div>三月</div>
-			<div>四月</div>
-			<div>五月</div>
-			<div>六月</div>
-			<div>七月</div>
-			<div>八月</div>
-			<div>九月</div>
-			<div>十月</div>
-			<div>十一月</div>
-			<div>十二月</div>
+			<?php
+			foreach ($months as $key => $value) {
+				if ($month != $value) {
+					echo "<a href='index.php?year={$year}&month={$value}'>{$key}</a>";
+				}else {
+					echo "<a href='#'>{$key}</a>";
+				}
+				
+			}
+			?>
 		</section>
 		<section class="calendar_day_th">
 			<div>週日</div>
@@ -127,7 +126,7 @@ for ($i = 0; $i < (6 - $lastWeekday); $i++) {
 
 			?>
 			<div class="calendar_day">
-				<span class='calendar_date'></span>
+				<span class="calendar_date"></span>
 				<span class="calendar_task"></span>
 			</div>
 		</section>		

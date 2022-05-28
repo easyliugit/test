@@ -1,0 +1,45 @@
+		*{
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.calendar_body
+		,.header
+		,.calendar_month
+		,.calendar_day_th
+		,.calendar_week{
+			border: 1px solid lightgray;
+		}
+		.calendar_body{
+			width: 1020px;
+			margin: 10px auto;
+			height: 630px;
+		}
+		.header{
+			text-align: center;
+		}
+		.calendar_month{
+			display: flex;
+			text-align: center;
+			justify-content:space-around;
+		}		
+		.calendar_month > div{
+			/* flex-basis: calc(100% / 12); */
+		}
+		.calendar_day_th{
+			display: flex;
+			justify-content:space-around;
+		}
+		.calendar_day_th > div{
+			/* flex-basis: calc(100% / 7); */
+		}
+		.calendar_week{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.calendar_week > div{
+			flex-basis: calc(100% / 7);
+		}
+		.calendar_day{
+			display: flex;
+			flex-flow: column wrap;
+		}

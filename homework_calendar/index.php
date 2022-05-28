@@ -8,7 +8,7 @@ if (isset($_GET['month'])) {
 	$year = date("Y");
 }
 
-// 前後頁年月份參數傳遞預設值   
+// 前後頁月份參數傳遞預設值   
 switch ($month) {
 	case 1:
 		$prevMonth = 12;
@@ -64,52 +64,73 @@ for ($i = 0; $i < (6 - $lastWeekday); $i++) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>線上月曆</title>
-	<style>
-	</style>
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-	<div class="wrapper">
-
-		<h1>使用陣列來做月曆</h1>
-		<p><?php echo "要顯示的月份為" . $year . '年' . $month . '月'; ?></p>
-
-		<div class='nav'>
-			<span>
-				<a href='index.php?year=<?= $prevYear; ?>&month=<?= $prevMonth; ?>'>上一個月</a>
-			</span>
-			<span><?= $year . '年' . $month . '月'; ?></span>
-			<span>
-				<a href='index.php?year=<?= $nextYear; ?>&month=<?= $nextMonth; ?>'>下一個月</a>
-			</span>
-		</div>
-
-		<div class="table">
-			<div class='header'>日</div>
-			<div class='header'>一</div>
-			<div class='header'>二</div>
-			<div class='header'>三</div>
-			<div class='header'>四</div>
-			<div class='header'>五</div>
-			<div class='header'>六</div>
+	<div class="calendar_body">
+		<header class="header">
+			<h1>使用陣列來做月曆</h1>
+			<p><?php echo "要顯示的月份為" . $year . '年' . $month . '月'; ?></p>
+	
+			<div class='nav'>
+				<span>
+					<a href='index.php?year=<?= $prevYear; ?>&month=<?= $prevMonth; ?>'>上一個月</a>
+				</span>
+				<span><?= $year . '年' . $month . '月'; ?></span>
+				<span>
+					<a href='index.php?year=<?= $nextYear; ?>&month=<?= $nextMonth; ?>'>下一個月</a>
+				</span>
+			</div>
+		</header>
+		<section class="calendar_month">
+			<div>一月</div>
+			<div>二月</div>
+			<div>三月</div>
+			<div>四月</div>
+			<div>五月</div>
+			<div>六月</div>
+			<div>七月</div>
+			<div>八月</div>
+			<div>九月</div>
+			<div>十月</div>
+			<div>十一月</div>
+			<div>十二月</div>
+		</section>
+		<section class="calendar_day_th">
+			<div>週日</div>
+			<div>週一</div>
+			<div>週二</div>
+			<div>週三</div>
+			<div>週四</div>
+			<div>週五</div>
+			<div>週六</div>			
+		</section>
+		<section class="calendar_week">
 			<?php
 
 			// 依據月曆陣列畫格子，並帶入月曆值
 			foreach ($dateHouse as $k => $day) {
 				// 是否為假日套用.weekend CSS樣式
 				$hol = ($k % 7 == 0 || $k % 7 == 6) ? 'weekend' : "";
+				echo "<div class='calendar_day'>";
 				// 是否帶入日期
 				if (!empty($day)) {
 					$dayFormat = date("j", strtotime($day));
-					echo "<div class='{$hol}'>{$dayFormat}</div>";
+					echo "<span class='calendar_date'>{$dayFormat}</span>";
 				} else {
-					echo "<div class='{$hol}'></div>";
+					echo "<span class='calendar_date'></span>";
 				}
+				echo "<span class='calendar_task'>1</span>";
+				echo "</div>";
 			}
 
 			?>
-		</div>
-
+			<div class="calendar_day">
+				<span class='calendar_date'></span>
+				<span class="calendar_task"></span>
+			</div>
+		</section>		
 
 	</div>
 </body>

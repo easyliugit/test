@@ -1,6 +1,7 @@
 		*{
 			margin: 0;
 			box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", sans-serif;
 		}
 		.header
 		,.calendar_month
@@ -8,9 +9,6 @@
 		,.calendar_week{
 			/* border: 1px solid lightgray; */
 		}
-        span{
-            font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", sans-serif;
-        }
 
 		.calendar_body{
 			width: 1020px;
@@ -21,7 +19,14 @@
             padding: 6px 6px 10px 10px;
 		}
 		.header{
-			text-align: center;
+            display: flex;
+            justify-content: space-between;
+		}
+		.header > a{
+            text-decoration: none;
+            font-size: 30px;
+            color: lightslategray;
+            font-weight: 600;
 		}
 		.calendar_month{
 			display: flex;
@@ -31,16 +36,21 @@
 		}		
 		.calendar_month > a{
             text-decoration: none;
-            font-size: larger;
-            color: #000;
+            font-size: 30px;
+            color: lightgray;
             font-weight: 600;
 		}
+        .calendar_month > a.month_thisday{
+            color: #000;
+        }
 		.calendar_day_th{
 			display: flex;
 			justify-content:space-around;
 		}
 		.calendar_day_th > div{
-			/* flex-basis: calc(100% / 7); */
+			font-size: 24px;
+            font-weight: 500;
+            flex-basis: 100%;
 		}
 		.calendar_week{
 			display: flex;
@@ -64,4 +74,12 @@
             font-size: 18px;
             font-weight: 100;
             padding-top: 6px;
+        }
+        .bg_color_holi{
+            background-color: lavenderblush;
+            color: red;
+        }
+        .bg_color_today{
+            /* background-color: lightcyan; */
+            color: blue;
         }

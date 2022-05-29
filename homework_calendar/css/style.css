@@ -71,7 +71,7 @@
             line-height: 0.7;
         }
         .calendar_task{
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 100;
             padding-top: 6px;
         }
@@ -81,5 +81,6 @@
         }
         .bg_color_today{
             /* background-color: lightcyan; */
-            color: blue;
+            border: 3px solid blue;
+            /* color: blue; */
         }

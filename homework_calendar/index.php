@@ -84,9 +84,9 @@ for ($i = 0; $i < (6 - $lastWeekday); $i++) {
 <body>
 	<div class="calendar_body">
 		<header class="header">
-			<a href='index.php?year=<?= $prevYear-1; ?>&month=<?= $prevMonth; ?>'><?= $prevYear-1; ?>年</a>
+			<a href='index.php?year=<?= $prevYear-1; ?>&month=<?= $month; ?>'><?= $prevYear-1; ?>年</a>
 			<h1><?php echo $year;?>年</h1>
-			<a href='index.php?year=<?= $nextYear+1; ?>&month=<?= $nextMonth; ?>'><?= $prevYear+1; ?>年</a>
+			<a href='index.php?year=<?= $nextYear+1; ?>&month=<?= $month; ?>'><?= $prevYear+1; ?>年</a>
 		</header>
 		<section class="calendar_month">
 			<?php

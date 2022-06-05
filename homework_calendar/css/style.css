@@ -28,16 +28,31 @@
 		}
 
 		.header {
+			text-align: center;
+			justify-content: space-between;
+			background-color: white;
+		}
+
+		.calendar_year {
 			display: flex;
 			justify-content: space-between;
 			background-color: white;
 		}
 
-		.header>a {
+		.calendar_year>a {
 			text-decoration: none;
-			font-size: 30px;
+			font-size: 32px;
 			color: lightslategray;
 			font-weight: 600;
+		}
+
+		.calendar_year>a:hover{
+			font-size: 26px;
+			border: 3px solid blue;
+		}
+
+		.calendar_year>a.year_thisday {
+			color: #000;
 		}
 
 		.calendar_month {
@@ -53,6 +68,11 @@
 			font-size: 30px;
 			color: lightgray;
 			font-weight: 600;
+		}
+
+		.calendar_month>a:hover{
+			font-size: 24px;
+			border: 3px solid blue;
 		}
 
 		.calendar_month>a.month_thisday {

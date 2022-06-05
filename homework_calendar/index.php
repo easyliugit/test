@@ -77,17 +77,20 @@ for ($i = 0; $i < (6 - $lastWeekday); $i++) {
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>線上月曆</title>
+	<title>PHP 萬年曆</title>
 	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 	<div class="calendar_body">
 		<header class="header">
-			<a href='index.php?year=<?= $prevYear-1; ?>&month=<?= $month; ?>'><?= $prevYear-1; ?>年</a>
-			<h1><?php echo $year;?>年</h1>
-			<a href='index.php?year=<?= $nextYear+1; ?>&month=<?= $month; ?>'><?= $prevYear+1; ?>年</a>
+			<h1>PHP 萬年曆</h1>
 		</header>
+		<Section class="calendar_year">
+			<a href='index.php?year=<?= $prevYear-1; ?>&month=<?= $month; ?>'><?= $prevYear-1; ?>年</a>
+			<a href='#' class="year_thisday"><?php echo $year;?>年</a>
+			<a href='index.php?year=<?= $nextYear+1; ?>&month=<?= $month; ?>'><?= $prevYear+1; ?>年</a>
+		</Section>
 		<section class="calendar_month">
 			<?php
 			foreach ($months as $key => $value) {
